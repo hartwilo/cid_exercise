@@ -26,12 +26,11 @@ jobs:
       run: mvn assembly:assembly
     - name: unittests
       run: mvn test
-    - uses: sfdx-actions/setup-pmd@1
+      
+    - uses: sfdx-actions/setup-pmd@v1
     - name: run-pmd
       run: pmd -d ./src -R category/java/bestpractices.xml -f text
-    -
-        name: Checkout 
-        uses: actions/checkout@v2
+
     -
         name: Login to Docker Hub
         uses: docker/login-action@v1

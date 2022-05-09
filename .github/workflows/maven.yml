@@ -28,7 +28,7 @@ jobs:
       run: mvn test
     - uses: sfdx-actions/setup-pmd@1
     - name: run-pmd
-      run: pmd -d ./force-app/main/default/classes -R category/apex/design.xml -f text
+      run: pmd -d ./src -R category/java/bestpractices.xml -f text
     -
         name: Checkout 
         uses: actions/checkout@v2
